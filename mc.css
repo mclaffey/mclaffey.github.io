@@ -1,0 +1,486 @@
+/*
+Theme Name: Runo
+Description: Used to style the TinyMCE editor.
+*/
+
+html {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+* {
+	color: inherit;
+	font: 15px Helvetica, Arial, sans-serif;
+	font-style: inherit;
+	font-weight: inherit;
+	line-height: 1.625;
+}
+body {
+	color: #333;
+	font: 15px Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	line-height: 1.625;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+}
+h1
+{
+	border-bottom: 1px solid gray;
+}
+
+h1,
+h2 {
+	color: #000;
+	font-size: 35px;
+	font-weight: normal;
+	margin: 3em 0 .8125em;
+}
+
+h2 {
+	font-size: 26px;
+	text-decoration: underline;
+}
+h3 {
+	font-size: 23px;
+}
+h4, h5, h6 {
+	font-size: 20px;
+	margin: 0;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.625em;
+}
+
+/* Text elements */
+
+p {
+	margin-bottom: 1.625em;
+}
+ul, ol {
+	margin: 0 0 1.625em 2.5em;
+	padding: 0;
+}
+ul {
+	list-style: square;
+}
+ol {
+	list-style-type: decimal;
+}
+ol ol {
+	list-style: upper-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+}
+dl {
+	margin: 0 1.625em;
+}
+dt {
+	font-size: 15px;
+	font-weight: bold;
+}
+dd {
+	margin: 0 0 1.625em;
+}
+strong {
+	font-weight: bold;
+}
+cite, em, i {
+	font-style: italic;
+}
+cite {
+	border: none;
+}
+big {
+	font-size: 131.25%;
+}
+.mceContentBody blockquote,
+.mceContentBody blockquote p {
+	font-family: Georgia, "Bitstream Charter", serif !important;
+	font-style: italic !important;
+	font-weight: normal;
+	margin: 0 3em;
+}
+.mceContentBody blockquote em,
+.mceContentBody blockquote i,
+.mceContentBody blockquote cite {
+	font-style: normal;
+}
+.mceContentBody blockquote cite {
+	color: #666;
+	font: 12px Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+pre {
+	background: #f4f4f4;
+	font: 15px Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	margin-bottom: 1.625em;
+	padding: 0.75em 1.625em;
+}
+code, kbd, samp, var {
+	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym, dfn {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+address {
+	display: block;
+	margin: 0 0 1.625em;
+}
+del {
+	color: #333;
+}
+ins {
+	background: #fff9c0;
+	border: none;
+	color: #333;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 10px;
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+input[type=text],
+textarea {
+	background: #fafafa;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+	border: 1px solid #ddd;
+	color: #888;
+}
+input[type=text]:focus,
+textarea:focus {
+	color: #333;
+}
+textarea {
+	padding-left: 3px;
+	width: 98%;
+}
+input[type=text] {
+	padding: 3px;
+}
+
+/* Links */
+a,
+a em,
+a strong {
+	color: #1b8be0;
+	text-decoration: none;
+}
+a:focus,
+a:active,
+a:hover {
+	text-decoration: underline;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+ * Tables
+ *
+ * Borders: horizontal only
+ * on top for each td, on bottom for whole table
+ */
+
+table {
+	border: none;
+	border-bottom: 1px solid #ddd;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: left;
+	margin: 0 0 1.625em;
+	width: 100%;
+}
+tr th {
+	border: none;
+	color: #666;
+	font-size: 10px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 2.6em;
+	text-transform: uppercase;
+}
+td {
+	border: none;
+	border-top: 1px solid #ddd;
+	padding: 6px 10px 6px 0;
+}
+
+/* Images */
+img[class*="wp-image-"] {
+	height: auto;
+	max-width: 97.5%;
+}
+img.size-full {
+	width: auto; /* Prevent stretching of full-size images in IE8 */
+}
+img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+p img,
+.wp-caption {
+	margin-top: 0.4em;
+}
+img.bordered {
+	border: 1px solid #ddd;
+	padding: 6px;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 1.625em;
+}
+.wp-caption {
+	border: none;
+	margin-bottom: 1.625em;
+	max-width: 96%;
+	padding: 9px;
+}
+.wp-caption img {
+	display: block;
+	margin: 5px auto 0 !important;
+	max-width: 98%;
+}
+.wp-caption .wp-caption-text,
+.wp-caption-dd {
+	margin-bottom: 0em;
+	padding: 10px 10px 0 10px;
+	position: relative;
+	text-align: left;
+	color: #555;
+	font-size: 1em;
+    font-style: italic;
+}
+
+a:focus img[class*="wp-image-"],
+a:hover img[class*="wp-image-"],
+a:active img[class*="wp-image-"] {
+	background: #eee;
+	border-color: #bbb;
+}
+.wp-caption a:focus img,
+.wp-caption a:active img,
+.wp-caption a:hover img {
+	background: #fff;
+	border-color: #ddd;
+}
+
+section.figure
+{
+	border: 1px solid gray;
+	padding: 8px;
+	overflow: auto;
+	width: 100%;
+	margin-bottom: 10px;
+}
+section.figure img
+{
+	height: 300px !important;
+	width: 300px !important;
+	float: right;
+}
+
+/* ******************************************** */
+/* Customization for class pages */
+
+#doc
+{
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+  width: 800px; /* width: 7in; */
+  clear: both;
+  overflow: auto;
+}
+
+.source
+{
+	font-size: 0.7em;
+}
+
+table#calendar
+{
+	border: 1px solid black;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: left;
+	margin: 0 0 1.625em;
+	width: 100%;
+}
+table#calendar tr th {
+	border: 1px solid gray;
+	color: #666;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	line-height: 2.6em;
+	text-transform: uppercase;
+	text-align: center;
+
+}
+table#calendar td {
+	border: 1px solid gray;
+	padding: 6px;
+}
+table#calendar td#calendar-past td {
+	background-color: black;
+	border: 1px solid gray;
+	padding: 6px;
+}
+
+.question {
+  color: #006600;
+}
+.clicker {
+  color: #993300;
+  font-weight: bold;
+}
+
+.float-left
+{
+	float: left;
+	margin-right: 20px;
+}
+
+.float-right
+{
+	float: right;
+}
+
+body.tables-no-borders table
+{
+	border-bottom: none;
+}
+body.tables-no-borders td
+{
+	border-top: none;
+}
+
+ul.terms
+{
+	margin-bottom: 16px;
+}
+
+ul.terms li
+{
+	float: left;
+	min-width: 30%;
+	padding: 0px 8px;
+	list-style: none;
+}
+
+.highly-needed-label,
+.scan-another
+{
+	color: #00803B; /* harris teeter green */
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.scan-another
+{
+	font-size: 24px;
+	margin-top: 50px;
+	margin-left: 280px;
+}
+
+.button
+{
+	padding: 20px 50px;
+	margin-top: 10px;
+	margin-right: 40px;
+	background: #00803B; /* harris teeter green */
+	color: white;
+	border-radius: 10px;
+	font-size: 24px;
+}
+
+.popular-category
+{
+	font-size: 24px;
+	margin-left: 100px;
+	padding-left: 20px;
+}
+
+.selected-category
+{
+	background: #9DCDB3;
+}
+
+.selected-category-note
+{
+	display: inline;
+	margin-left: 300px;
+}
+
+.action-column
+{
+	float:	left;
+	width:	50%;
+}
+
+.clearer
+{
+	clear: both;
+}
+
+.coupon
+{
+	border: 1px solid black;
+	padding: 80px;
+	margin-top: 40px;
+}
+
+.coupon-text
+{
+	color: #00803B; /* harris teeter green */
+	font-size: 16px;
+	font-weight: bold;
+}
