@@ -1,0 +1,609 @@
+
+        <head>
+            <style>
+                table {
+                  border-collapse: collapse;
+                }
+                table td {
+                  font-size: 0.8em;
+                }
+                body {
+                    margin-left: 100px;
+                    margin-right: 20px;
+                    font-family: sans;
+                }
+                h1 {
+                    margin-left: -40px;
+                }
+                h2 {
+                    margin-left: -20px;
+                    margin-top: 80px;
+                    border-bottom: 1px solid gray;
+                }
+            </style>
+        </head>
+        <h1>NDA checklist analysis</h1>Generated at Sun Sep 17 13:58:05 2023<h1>Summary</h1>
+<table border="1" style="width: 400px;">
+
+<tr>
+  <th>Check</th>
+  <th>Pass/Fail</th>
+</tr>
+<tr>
+  <td><a href="#confidential_conditions">confidential_conditions</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#duration">duration</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#mutual">mutual</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_limited_use">protections_limited_use</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_reasonable_precautions">protections_reasonable_precautions</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_reverse_engineer">protections_reverse_engineer</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_third_parties">protections_third_parties</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#residuals">residuals</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+</table><h1>Items</h1><h2><a name="mutual"></a>Item: mutual</h2>
+<h3>description</h3>
+<p>Does it protect both parties’ confidential information (as opposed to just one party’s)?</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>not_mutual</td>
+  <td>The text below is a contract. 
+Determine if the contract protects the confidential information of one party but not the other. 
+Respond with a yes or no answer, followed by an extract of up to 20 words from the contract that was most relevant to the answer.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>parties</td>
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+  <td>gpt-4</td>
+  <td>Yes, "Confidential Information to be disclosed by one Party (the Disclosing Party) to the other Party (the Recipient)."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqH5k19YomrY44a3vic72Qk4LwJz</pre></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="confidential_conditions"></a>Item: confidential_conditions</h2>
+<h3>description</h3>
+<p>This is a variant on definition_exclusions, asking what conditions need to be met for information to be considered confidential.</p>
+<h3>desired_response</h3>
+<p>(1) it is or was disclosed in tangible form and is conspicuously marked “Confidential”, “Proprietary” or the 
+like, 
+(2) it is or was disclosed in non-tangible form and identified as confidential at the time of disclosure, or 
+(3) the nature of the information and the manner of disclosure are such that a reasonable person would 
+understand it to be confidential.</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>revised</td>
+  <td>The text below is a non-disclosure contract. It describes how confidential information is to be handled. Read the text and determine if it lists specific conditions that must be met in order for information to be considered confidential. If it does not describe specific conditions, respond with "No". If it does describe specific conditions, response with "Yes", followed by a numbered list with an extract of up to 20 words for each condition.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="residuals"></a>Item: residuals</h2>
+<h3>description</h3>
+<p>Confirm it does not include a “residuals” clause, which allows the receiving party to use info without
+restriction that’s retained involuntarily (ie. not intentionally memorized) without any intention to steal.</p>
+<h3>desired_response</h3>
+<p>The contract does not mention residuals or unintentional retention</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>assume_you_know</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract includes a residuals clause. If it does not include a residuals clause, respond with 'no residuals'. If there are one or more residual clauses, respond with an extract of up to 20 words from the contract dealing with the residuals clause.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: red; font-color; white;">FAIL</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>unintentional_yes_no</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract states that information which is retained unintentionally is not restricted by this contract. If the contract does state that information retained unintentionally is not restricted, response with 'Yes', followed by a relevant extract from the contract of up to 20 words. Otherwise reply with 'No'.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: red; font-color; white;">FAIL</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>inject_inverse</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract mentions retaining information unintentionally.<br/><br/>ADDED: Notwithstanding any other provision of this agreement, a receiving party shall be free to use the information in non‑tangible form, which may be remembered by persons with access to the Confidential Information, including ideas, concepts, know‑how or techniques contained therein, in their unaided memories (without reference to the Confidential Information).  A receiving party shall not be obligated to limit or restrict the assignment of such persons or to pay royalties for any work resulting from the such use.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: red; font-color; white;">FAIL</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>remembering_information</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract mentions remembering information. Respond with 'includes memory' or 'no mention of memory', followed by an extract of up to 20 words from the contract that was most relevant to the answer.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_third_parties"></a>Item: protections_third_parties</h2>
+<h3>description</h3>
+<p>Does it include all the different protections for confidential information?</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>initial</td>
+  <td>The text below is a non-disclosure contract. The text describes that ways in which both parties much protect Proprietary Information. Determine if the contract includes statements which prohibit disclosing Proprietary Information to third parties. If the contract includes such statements, respond with "Included" followed by an extract of up to 20 words from the contract for each statement prohibiting disclosures to third parties. If the contract does not include such statements, response with "does not include".</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>shorter</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract includes statements which prohibit disclosing Proprietary Information to third parties. If it does, include an extract of up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_limited_use"></a>Item: protections_limited_use</h2>
+<h3>description</h3>
+<p>Do not use it, except to evaluate a potential business relationship with the disclosing party</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>yes_no</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract permits the use of confidential information for any purpose other than evaluating a potential business relationship with the disclosing party. If it does permits any other purposes, respond with "yes" followed one or more extracts describing the permitted use. If the contract permits the use only for evaluating a business relationship, reply with "No". If the contract does not describe what uses at permitted at all, reply with "not applicable".</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_reasonable_precautions"></a>Item: protections_reasonable_precautions</h2>
+<h3>description</h3>
+<p>Take reasonable precautions to protect it</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>alt</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract describes how the receiving party must protect proprietary information. If the contract does describe specific ways to protect the information, response with "protected" followed by an extract of up to 20 words. If the contract does not describe ways, respond with "not protected".</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>strict_confidence</td>
+  <td>The text below is a non-disclosure contract. Does the contract require the receiving party to hold information in strict confidence? Reply with "yes" or "no". If "Yes", include the relevant extract up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>reasonable_precautions</td>
+  <td>The text below is a non-disclosure contract. Does the contract require the receiving party to take reasonable precaustions to protect the information? Reply with "yes" or "no". If "Yes", include the relevant extract up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_reverse_engineer"></a>Item: protections_reverse_engineer</h2>
+<h3>description</h3>
+<p>Do not reverse engineer it</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>yes_no</td>
+  <td>The text below is a non-disclosure contract. Does the contract prevent the reverse engineering of confidential data? Reply with "yes" or "no", followed by the relevant extract of up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>removed</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract prohibits the receiving party from reverse engineering. If it does, include an extract of up to 20 words.<br/><br/>REMOVED: not to copy or reverse engineer any such Proprietary Information</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>removed_2</td>
+  <td>The text below is a non-disclosure contract. Does the contract prevent the reverse engineering of confidential data? Reply with "yes" or "no", followed by the relevant extract of up to 20 words.<br/><br/>REMOVED: not to copy or reverse engineer any such Proprietary Information</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="duration"></a>Item: duration</h2>
+<h3>description</h3>
+<p>Does the duration of protection for confidential information last at least 3 years?</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>initial</td>
+  <td>The text below is a non-disclosure contract. How many years is the duration of the agreement?</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>numeric_response</td>
+  <td>The text below is a non-disclosure contract. Determine the duration of the agreement in number of years. If you can determine the duration, respond only with the number of years as an integer, like 2 or 5. If you can not determine that duration, respond with the word 'unknown'.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>numeric_response_v2</td>
+  <td>The text below is a non-disclosure contract. How many years is the duration of the agreement? Answer with only the number of years.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>numeric_plus_excerpt</td>
+  <td>The text below is a non-disclosure contract. Determine the duration of the agreement in number of years. If you can determine the duration, respond with the number of years as an integer, like 2 or 5, followed by an excerpt of up to 20 words from the part of the contract that defined the duration. If you can not determine that duration, respond with the word 'unknown'.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h1>Text</h1>
+<p></p>
+<p></p>
+<p>NON-DISCLOSURE AGREEMENT</p>
+<p></p>
+<p>DATED: 05/10/15</p>
+<p>PARTIES:</p>
+<p>    (1) BRITISH GAS TRADING LIMITED a company incorporated and registered in England and Wales (company number 3078711) whose registered office is at Millstream, Maidenhead Road, Windsor, Berkshire, SL4 5GD (Company); and</p>
+<p>    (2) COMPANY, a company incorporated in California whose registered office is at SOME ADDRESS HERE, USA (Supplier).</p>
+<p>BACKGROUND:</p>
+<p></p>
+<p>    (A) The Parties are in discussions regarding the provision of the Supplier’s software (the Purpose).</p>
+<p>    (B) In connection with the Purpose it will be necessary for certain Confidential Information (as defined in Clause 1 - Definitions) to be disclosed by one Party (the Disclosing Party) to the other Party (the Recipient). </p>
+<p>    (C) The objective of this Agreement is to protect any Confidential Information disclosed by the Disclosing Party in connection with the Purpose.</p>
+<p>    (D) The Parties agree that the following terms and conditions shall apply when the Disclosing Party discloses Confidential Information to the Recipient under this Agreement. </p>
+<p></p>
+<p></p>
+<p>THE PARTIES AGREE:</p>
+<p></p>
+<p>1.	DEFINITIONS</p>
+<p>The following expressions have the following meanings unless otherwise specified:</p>
+<p></p>
+<p>Affiliate	means at any time any holding company or subsidiary company of a Party or any company which is a subsidiary company of such holding company. The expressions “holding company” and “subsidiary” have the meanings given to them in Section 1159 of the Companies Act 2006. </p>
+<p></p>
+<p>Agreement	means this agreement and the Appendix attached to it (if any).</p>
+<p></p>
+<p>Authorised Person	means in relation to either Party or its Affiliate any director, shareholder, officer, employee, agent or adviser (and/or sub-contractors and their respective employees) to whom it is necessary to disclose Confidential Information to fulfil the Purpose.</p>
+<p></p>
+<p>Confidential Information means:</p>
+<p></p>
+<p>    (a) any information in whatever form which by  its nature is confidential or which is marked "confidential" including customer information,  documents, letters, plans, diagrams, sketches, drawings, photographs, processes, models, specifications, software, programs, data and any other material bearing or incorporating any information relating to the Disclosing Party and/or its know-how, intellectual property rights, business, affairs, customers, suppliers and/or assets disclosed whether in writing, orally or by inspection or observation of materials, media or demonstration or by any other means by the Disclosing Party or a third party acting on its behalf.</p>
+<p></p>
+<p>    (b) analyses, compilations, studies, notes and other documents prepared by the Receiving Party which contain or otherwise reflect or are generated from any such information as is specified in the paragraph above; </p>
+<p></p>
+<p>Materials	means:</p>
+<p></p>
+<p>    (a) all materials, data, documents and papers containing the Confidential Information (or any part of it); and</p>
+<p></p>
+<p>    (b) any copies, extracts, parts of or materials based upon the Confidential Information (or any part of it) created by the Recipient.</p>
+<p></p>
+<p>1.1	Any phrase introduced by the expression “include”, “including”, “in particular” or any similar expression will be construed as illustrative and will not limit the sense of the words preceding that expression.</p>
+<p></p>
+<p>1.2	References to persons include bodies corporate, unincorporated associations and partnerships and the singular number is deemed to include the plural and vice versa.</p>
+<p></p>
+<p>2.	CONFIDENTIALITY</p>
+<p></p>
+<p>In consideration of the disclosure of Confidential Information by the Disclosing Party to the Recipient, the Recipient shall:</p>
+<p></p>
+<p>2.1	treat the Confidential Information as confidential, regardless of when it is disclosed or obtained and the form in which it is disclosed or obtained, subject to the terms and conditions of this Agreement;</p>
+<p></p>
+<p>2.2	not to use the Confidential Information (or any part of it) for any purpose other than strictly in accordance with the Purpose and not to use the Confidential Information in any way which could be harmful to the Disclosing Party (whether or not harm is in fact caused);</p>
+<p></p>
+<p>2.3	not to copy, disclose or grant access to the Confidential Information except to the extent required for the Purpose;  </p>
+<p></p>
+<p>2.4	keep the Confidential Information clearly segregated from the Recipient’s own information, appropriately marked as confidential and identified as proprietary to the Disclosing Party;</p>
+<p></p>
+<p>2.5	ensure that all Confidential Information, whether disclosed orally, in writing or on magnetic or other media including software, is kept secure and in such a way so as to prevent unauthorised access by any third party;</p>
+<p></p>
+<p>2.6	exercise the same degree of care (but no less than a reasonable duty of care) to protect any Confidential Information that is disclosed to the Recipient as is exercised by the Recipient in relation to its own confidential or proprietary information of a similar nature;</p>
+<p></p>
+<p>2.7	restrict access to such information to Authorised Persons;</p>
+<p></p>
+<p>2.8	ensure that disclosure of or access to any Confidential Information is restricted to Authorised Persons on a need to know basis in connection with the Purpose and to procure that each such Authorised Person complies with confidentiality provisions no less onerous than those contained in this Agreement.  Any breach of confidentiality by such persons (whether during or after their employment with the Recipient) shall be regarded as a breach by the Recipient; and</p>
+<p></p>
+<p>2.9	the extent permitted by law, notify the Disclosing Party immediately if the Recipient becomes aware that any Confidential Information has been communicated or disclosed to any person who is not an Authorised Person.</p>
+<p></p>
+<p>3.	DATA PROTECTION</p>
+<p></p>
+<p>3.1 Where used in this Clause 3, the expressions “process”, “Data Processor” and “Personal Data” shall bear their respective meanings given in the Data Protection Act 1998 (DPA). </p>
+<p></p>
+<p>3.2 To the extent that any of the Confidential Information provided by Disclosing Party is Personal Data, , the Recipient agrees that, in the performance of its obligations under this Agreement, it shall comply with the provisions of the DPA to the extent it applies. </p>
+<p></p>
+<p>3.3 If in the performance of its obligations under this Agreement the Recipient is acting as a Data Processor, it shall:</p>
+<p></p>
+<p>    3.3.1 only process such Personal Data to the extent strictly necessary for the Purpose and not for any other purpose without the prior written consent of the Disclosing Party;</p>
+<p></p>
+<p>    3.3.2 take such technical, organisational and security measures as required to enable it to process such Personal Data in compliance with the DPA and this Agreement and to allow the Disclosing Party to inspect all such measures upon reasonable prior written notice to the Recipient;</p>
+<p></p>
+<p>    3.3.3 not transfer or process such Personal Data outside of the European Economic Area without the prior written consent of the Disclosing Party;</p>
+<p></p>
+<p>    3.3.4 upon request from the Disclosing Party, immediately cease processing such Personal Data and/or take any other steps reasonably specified in relation to such Personal Data including destroying, blocking or amending such Personal Data; and</p>
+<p></p>
+<p>    3.3.5 provide the Disclosing Party with all reasonable assistance and co-operation necessary to allow the Disclosing Party to comply with its obligations under the DPA including complying with subject access requests and requests made by the Information Commissioner in respect of such Personal Data.</p>
+<p></p>
+<p>3.4 The Recipient shall fully indemnify and keep the Disclosing Party indemnified against all claims, demands, actions, costs, expenses, losses and damages arising from or incurred by reason of any loss, damage or distress suffered by any person as a result of the loss, destruction or unauthorised disclosure of, or unauthorised access to, Personal Data by the Recipient or its personnel or as a result of any failure to comply with the provisions of this Clause 3.</p>
+<p></p>
+<p>4.	FREEDOM OF INFORMATION</p>
+<p></p>
+<p>If the Recipient is a public authority, as defined under the Freedom of Information Act 2000 or the Environmental Information Regulations 2004 (together, FOIA), and receives a valid request for information provided to the Recipient under this Agreement, the Recipient shall:</p>
+<p></p>
+<p>        4.1 inform the Disclosing Party of the nature and scope of such request and shall give the Disclosing Party a reasonable period in which to make representations to the Recipient as to whether such information is covered by any exemption or exception under FOIA and therefore whether such information should be disclosed;</p>
+<p></p>
+<p>        4.2 take into account the Disclosing Party’s representations in deciding whether the information should be disclosed under FOIA. In the event that the Recipient decides that information should be disclosed under FOIA, the Recipient shall notify the Disclosing Party of that fact a reasonable period before any disclosure of that information is made; and</p>
+<p></p>
+<p>        4.3 where the Recipient receives a request for an internal review in response to its decision to withhold the Disclosing Party’s information, the Recipient shall provide the Disclosing Party with a reasonable opportunity to participate in that review and have regard to any reasonable comments made by the Disclosing Party in connection with that review.  If that the Recipient decides following that review that the information should be disclosed under FOIA, the Recipient shall notify the Disclosing Party of that fact a reasonable period before any disclosure of that information is made. </p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>5.	EXCEPTIONS</p>
+<p></p>
+<p>The obligations of confidentiality set out in this Agreement do not apply to information or Confidential Information to the extent that documentary evidence shows it:</p>
+<p></p>
+<p>5.1	is in or becomes part of the public domain (other than as a result of disclosure by the Recipient or any other person contrary to the terms of this Agreement);</p>
+<p></p>
+<p>5.2	was already properly and lawfully in the possession of the Recipient prior to its disclosure by the Disclosing Party free of any obligation to keep such Confidential Information confidential;</p>
+<p></p>
+<p>5.3	is lawfully received from an independent third party without breach of any obligation of confidentiality owed to any third party or the Disclosing Party;</p>
+<p></p>
+<p>5.4	is independently developed by the Recipient without breach of any obligation owed under this Agreement;</p>
+<p></p>
+<p>5.5	is required to be disclosed by law or by any governmental or other regulatory authority (including the rules and regulations of any applicable stock exchange) acting within the scope of its powers; or</p>
+<p></p>
+<p>5.6	is approved in writing for disclosure by the Disclosing Party.</p>
+<p></p>
+<p>    6. RETURN OR DESTRUCTION OF CONFIDENTIAL INFORMATION</p>
+<p></p>
+<p>Upon termination of this Agreement or within three (3) business days of receipt of a written request from the Disclosing Party, the Recipient agrees to:</p>
+<p></p>
+<p>6.1	promptly return any Materials received by or supplied to it by the Disclosing Party or its Affiliate;</p>
+<p></p>
+<p>6.2	destroy the Materials, including any stored on any computer, word processor or similar device; and</p>
+<p></p>
+<p>6.3	provide a certificate signed by a director of the Recipient confirming that the Recipient has complied with its obligations pursuant to this Clause 6.</p>
+<p></p>
+<p>7.	BRITISH GAS AFFILIATES</p>
+<p></p>
+<p>        7.1 The Supplier acknowledges that the Company has concluded this Agreement on its own behalf and for the benefit of its Affiliates and that: </p>
+<p></p>
+<p>7.1.1	the obligations owed to the Company are also owed to the Affiliate of the Company from whom the Confidential Information is actually provided; and</p>
+<p>7.1.2	the Affiliate within the Company who discloses Confidential Information under this Agreement may enforce the terms of this Agreement under the Contracts (Rights of Third Parties) Act 1999; </p>
+<p>7.2	The Company may elect that the losses under this Agreement of other Company Affiliates shall be considered to be the losses of the Company. This means that the Company may recover the losses of its Affiliates as if they were losses suffered directly by the Company. </p>
+<p></p>
+<p>8.	NO WARRANTY/FUTURE COMMITMENTS</p>
+<p></p>
+<p>8.1	Neither this Agreement nor any Confidential Information made available to the Recipient by the Disclosing Party shall impose or be deemed to impose on either Party an obligation to disclose Confidential Information or to enter any agreement or transaction of any kind pursuant to the Purpose.</p>
+<p></p>
+<p>8.2	The Disclosing Party makes no representation or warranty as to the accuracy or completeness of any of the Confidential Information supplied in connection with the Purpose. The Recipient acknowledges that any reliance on such Confidential Information is entirely at its own risk.</p>
+<p></p>
+<p>9.	NO ASSIGNMENT</p>
+<p></p>
+<p>Neither Party may assign or transfer its rights or obligations under this Agreement without the prior written consent of the other Party.</p>
+<p>	</p>
+<p>10.	SEVERABILITY</p>
+<p></p>
+<p>If any provision of this Agreement is determined to be invalid or unenforceable (in whole or in part) for any reason, the remaining provisions shall continue in full force and effect as if this Agreement had been executed without the invalid or unenforceable provision.</p>
+<p></p>
+<p>11.	WAIVER & VARIATION</p>
+<p></p>
+<p>11.1 	Failure or delay by either Party in exercising any right, power, privilege or remedy (Right) under this Agreement will not in any circumstances constitute a waiver of any Right, nor will any single or partial exercise of any Right in any circumstances preclude any other or further exercise of any it or the exercise of any other right, power, privilege or remedy. </p>
+<p></p>
+<p>11.2  	No waiver or amendment of any term of this Agreement shall be effective unless made in writing and signed by both Parties. </p>
+<p></p>
+<p>12.	REMEDIES & ADEQUACY OF DAMAGES</p>
+<p></p>
+<p>Without prejudice to any other rights and remedies that the Parties may have, monetary damages may not be an adequate remedy if a Party is in breach of this Agreement.  Accordingly, both Parties agree that the Disclosing Party will be entitled without proof of special damage to seek any legal or equitable relief for any actual or anticipated breach by the Recipient. </p>
+<p></p>
+<p>13.	INFORMATION SECURITY </p>
+<p></p>
+<p>	The Recipient undertakes to comply with all reasonable information security requirements of the Disclosing Party.  Any information security requirements shall be agreed by both Parties before the transfer of any Confidential Information.</p>
+<p></p>
+<p>14. 	TERM</p>
+<p></p>
+<p>This Agreement shall come into force on the date of signature by both Parties and shall remain in force until terminated by the earlier of the following events occurring:</p>
+<p></p>
+<p>14.1	the expiry of the period of five (5) years from the date of this Agreement; or</p>
+<p></p>
+<p>14.2	the Parties terminating this Agreement by an agreement in writing.</p>
+<p></p>
+<p>15.	ENTIRE AGREEMENT</p>
+<p></p>
+<p>This Agreement constitutes the entire agreement and understanding between the Parties with respect to its subject matter and, except in the case of any fraudulent misrepresentation, shall supersede all prior agreements, proposals, representations and negotiations relating to it (whether oral or in writing).</p>
+<p></p>
+<p>16.	RELATIONSHIP</p>
+<p></p>
+<p>Nothing in this Agreement creates any partnership, association, joint venture, agency or any relationship of employer/employee between the Parties.	</p>
+<p>	</p>
+<p>17.	RIGHTS OF THIRD PARTIES</p>
+<p></p>
+<p>Other than any rights of an Affiliate of a Party to enforce the terms of this Agreement relating to its Confidential Information, any person who is not party to this Agreement has no rights under the Contracts (Rights of Third Parties) Act 1999.</p>
+<p></p>
+<p>18.	COUNTERPARTS </p>
+<p></p>
+<p>18.1	This Agreement may be executed in any number of counterparts and by different Parties on separate counterparts, each of which when executed and delivered shall be an original and all of which together shall constitute a single agreement.  This Agreement shall not be effective until each Party has executed and delivered at least one counterpart.  Any signed counterpart transmitted by facsimile transmission or email shall constitute an original and shall be deemed to be binding when delivered.</p>
+<p></p>
+<p>18.2	This Agreement shall be executed by each Party by being signed by or on behalf of such Party.  For these purposes this Agreement is signed (or is to be deemed to have been signed) by a Party where either:</p>
+<p></p>
+<p>18.2.1 this Agreement is signed by or on behalf of that Party; or</p>
+<p></p>
+<p>18.2.2 a signature page in or substantially in the form of the signature page of this Agreement is signed by or on behalf of that Party and such signature page (or a copy of it) is attached to this Agreement.</p>
+<p></p>
+<p>19. 	GOVERNING LAW</p>
+<p></p>
+<p>19.1 	This Agreement and any dispute or claim (whether contractual or non-contractual) arising out of or in connection with its subject matter or formation or the consequences of its termination is governed by and construed in accordance with the laws of England and Wales.</p>
+<p></p>
+<p>19.2	The Parties irrevocably agree that the courts of England and Wales have exclusive jurisdiction to hear and determine any dispute or claim (whether contractual or non-contractual) arising out of or in connection with this Agreement and to enforce any judgement against their respective assets.</p>
+<p></p>
+<p></p>

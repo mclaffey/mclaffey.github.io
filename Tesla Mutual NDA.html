@@ -1,0 +1,433 @@
+
+        <head>
+            <style>
+                table {
+                  border-collapse: collapse;
+                }
+                table td {
+                  font-size: 0.8em;
+                }
+                body {
+                    margin-left: 100px;
+                    margin-right: 20px;
+                    font-family: sans;
+                }
+                h1 {
+                    margin-left: -40px;
+                }
+                h2 {
+                    margin-left: -20px;
+                    margin-top: 80px;
+                    border-bottom: 1px solid gray;
+                }
+            </style>
+        </head>
+        <h1>NDA checklist analysis</h1>Generated at Sun Sep 17 13:58:05 2023<h1>Summary</h1>
+<table border="1" style="width: 400px;">
+
+<tr>
+  <th>Check</th>
+  <th>Pass/Fail</th>
+</tr>
+<tr>
+  <td><a href="#confidential_conditions">confidential_conditions</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#duration">duration</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#mutual">mutual</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_limited_use">protections_limited_use</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_reasonable_precautions">protections_reasonable_precautions</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_reverse_engineer">protections_reverse_engineer</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#protections_third_parties">protections_third_parties</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+<tr>
+  <td><a href="#residuals">residuals</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+</tr>
+</table><h1>Items</h1><h2><a name="mutual"></a>Item: mutual</h2>
+<h3>description</h3>
+<p>Does it protect both parties’ confidential information (as opposed to just one party’s)?</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>not_mutual</td>
+  <td>The text below is a contract. 
+Determine if the contract protects the confidential information of one party but not the other. 
+Respond with a yes or no answer, followed by an extract of up to 20 words from the contract that was most relevant to the answer.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>parties</td>
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+  <td>gpt-4</td>
+  <td>Yes. "“Confidential Information” shall mean information disclosed by one party (“Disclosing Party”) to the other party (“Receiving Party”)."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHhBq8cwMmqZRHwXzsOUZqx2H74</pre></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="confidential_conditions"></a>Item: confidential_conditions</h2>
+<h3>description</h3>
+<p>This is a variant on definition_exclusions, asking what conditions need to be met for information to be considered confidential.</p>
+<h3>desired_response</h3>
+<p>(1) it is or was disclosed in tangible form and is conspicuously marked “Confidential”, “Proprietary” or the 
+like, 
+(2) it is or was disclosed in non-tangible form and identified as confidential at the time of disclosure, or 
+(3) the nature of the information and the manner of disclosure are such that a reasonable person would 
+understand it to be confidential.</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>revised</td>
+  <td>The text below is a non-disclosure contract. It describes how confidential information is to be handled. Read the text and determine if it lists specific conditions that must be met in order for information to be considered confidential. If it does not describe specific conditions, respond with "No". If it does describe specific conditions, response with "Yes", followed by a numbered list with an extract of up to 20 words for each condition.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="residuals"></a>Item: residuals</h2>
+<h3>description</h3>
+<p>Confirm it does not include a “residuals” clause, which allows the receiving party to use info without
+restriction that’s retained involuntarily (ie. not intentionally memorized) without any intention to steal.</p>
+<h3>desired_response</h3>
+<p>The contract does not mention residuals or unintentional retention</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>assume_you_know</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract includes a residuals clause. If it does not include a residuals clause, respond with 'no residuals'. If there are one or more residual clauses, respond with an extract of up to 20 words from the contract dealing with the residuals clause.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: red; font-color; white;">FAIL</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>unintentional_yes_no</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract states that information which is retained unintentionally is not restricted by this contract. If the contract does state that information retained unintentionally is not restricted, response with 'Yes', followed by a relevant extract from the contract of up to 20 words. Otherwise reply with 'No'.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: red; font-color; white;">FAIL</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>inject_inverse</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract mentions retaining information unintentionally.<br/><br/>ADDED: Notwithstanding any other provision of this agreement, a receiving party shall be free to use the information in non‑tangible form, which may be remembered by persons with access to the Confidential Information, including ideas, concepts, know‑how or techniques contained therein, in their unaided memories (without reference to the Confidential Information).  A receiving party shall not be obligated to limit or restrict the assignment of such persons or to pay royalties for any work resulting from the such use.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: red; font-color; white;">FAIL</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>remembering_information</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract mentions remembering information. Respond with 'includes memory' or 'no mention of memory', followed by an extract of up to 20 words from the contract that was most relevant to the answer.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_third_parties"></a>Item: protections_third_parties</h2>
+<h3>description</h3>
+<p>Does it include all the different protections for confidential information?</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>initial</td>
+  <td>The text below is a non-disclosure contract. The text describes that ways in which both parties much protect Proprietary Information. Determine if the contract includes statements which prohibit disclosing Proprietary Information to third parties. If the contract includes such statements, respond with "Included" followed by an extract of up to 20 words from the contract for each statement prohibiting disclosures to third parties. If the contract does not include such statements, response with "does not include".</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>shorter</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract includes statements which prohibit disclosing Proprietary Information to third parties. If it does, include an extract of up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_limited_use"></a>Item: protections_limited_use</h2>
+<h3>description</h3>
+<p>Do not use it, except to evaluate a potential business relationship with the disclosing party</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>yes_no</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract permits the use of confidential information for any purpose other than evaluating a potential business relationship with the disclosing party. If it does permits any other purposes, respond with "yes" followed one or more extracts describing the permitted use. If the contract permits the use only for evaluating a business relationship, reply with "No". If the contract does not describe what uses at permitted at all, reply with "not applicable".</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_reasonable_precautions"></a>Item: protections_reasonable_precautions</h2>
+<h3>description</h3>
+<p>Take reasonable precautions to protect it</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>alt</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract describes how the receiving party must protect proprietary information. If the contract does describe specific ways to protect the information, response with "protected" followed by an extract of up to 20 words. If the contract does not describe ways, respond with "not protected".</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>strict_confidence</td>
+  <td>The text below is a non-disclosure contract. Does the contract require the receiving party to hold information in strict confidence? Reply with "yes" or "no". If "Yes", include the relevant extract up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>reasonable_precautions</td>
+  <td>The text below is a non-disclosure contract. Does the contract require the receiving party to take reasonable precaustions to protect the information? Reply with "yes" or "no". If "Yes", include the relevant extract up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="protections_reverse_engineer"></a>Item: protections_reverse_engineer</h2>
+<h3>description</h3>
+<p>Do not reverse engineer it</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>yes_no</td>
+  <td>The text below is a non-disclosure contract. Does the contract prevent the reverse engineering of confidential data? Reply with "yes" or "no", followed by the relevant extract of up to 20 words.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>removed</td>
+  <td>The text below is a non-disclosure contract. Determine if the contract prohibits the receiving party from reverse engineering. If it does, include an extract of up to 20 words.<br/><br/>REMOVED: not to copy or reverse engineer any such Proprietary Information</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>removed_2</td>
+  <td>The text below is a non-disclosure contract. Does the contract prevent the reverse engineering of confidential data? Reply with "yes" or "no", followed by the relevant extract of up to 20 words.<br/><br/>REMOVED: not to copy or reverse engineer any such Proprietary Information</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h2><a name="duration"></a>Item: duration</h2>
+<h3>description</h3>
+<p>Does the duration of protection for confidential information last at least 3 years?</p>
+<table border="1" style="width: 100%;">
+<tr>
+  <th width="100px">Prompt label</th>
+  <th width="400px">Prompt text</th>
+  <th width="100px">Model</th>
+  <th width="400px">Response</th>
+  <th width="100px">Checkmark</th>
+  <th width="100px">Valid</th>
+  <th width="400px">Human Eval</th>
+</tr>
+<tr>
+  <td>initial</td>
+  <td>The text below is a non-disclosure contract. How many years is the duration of the agreement?</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>numeric_response</td>
+  <td>The text below is a non-disclosure contract. Determine the duration of the agreement in number of years. If you can determine the duration, respond only with the number of years as an integer, like 2 or 5. If you can not determine that duration, respond with the word 'unknown'.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>numeric_response_v2</td>
+  <td>The text below is a non-disclosure contract. How many years is the duration of the agreement? Answer with only the number of years.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<tr>
+  <td>numeric_plus_excerpt</td>
+  <td>The text below is a non-disclosure contract. Determine the duration of the agreement in number of years. If you can determine the duration, respond with the number of years as an integer, like 2 or 5, followed by an excerpt of up to 20 words from the part of the contract that defined the duration. If you can not determine that duration, respond with the word 'unknown'.</td>
+  <td>gpt-4</td>
+  <td><br/><br/><pre style="font-size: 0.7em;"></pre></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td>
+    <br/>
+  </td>
+</tr>
+<table>
+<h1>Text</h1>
+<p>THIS MUTUAL NON-DISCLOSURE AGREEMENT (this “Agreement”) is entered into as of the date indicated above (the “Effective Date”) between Tesla Motors, Inc., a Delaware corporation (“Tesla”), and _____________________, a(n) _____________________ (“Company”).  Tesla and Company hereby agree as follows:</p>
+<p>    1. Confidential Information. “Confidential Information” shall mean information disclosed by one party (“Disclosing Party”) to the other party (“Receiving Party”), subject to the exceptions in Section 6 below, and may include, but is not limited to, trade secrets, physical samples, financial, business, sales or technical information, terms of agreements, negotiations or proposals, all data, and such other information disclosed (a) in written  or other tangible form and marked “Confidential” or with words of similar import, (b) orally or visually and identified as confidential or proprietary information at the time of disclosure, or (c) under circumstances by which Receiving Party should reasonably understand such information is to be treated as confidential, whether or not marked “Confidential” or otherwise.  </p>
+<p>    2. Purpose. Disclosing Party and/or its Affiliates may disclose Confidential Information to Receiving Party and/or its Affiliates for the sole purpose of (a) considering a potential business relationship with each other, and/or (b) fulfilling the objectives of such business relationship (collectively, the “Purpose”). </p>
+<p>    3. Non-Use and Non-Disclosure Obligations. Subject to Section 6 of this Agreement, Receiving Party agrees not to: (a) use Disclosing Party’s Confidential Information for any reason, other than as required for the Purpose; and (b) disclose Disclosing Party’s Confidential Information to any individual or third party except to its employees, consultants, directors, and Affiliates that (i) have a “need to know” such Confidential Information for furtherance of the Purpose, and (ii) are bound to confidentiality under terms no less protective than the terms of this Agreement (collectively, “Authorized Recipients”).  Receiving Party shall implement and maintain appropriate organizational, technical, and administrative security measures, exercising the same degree of care in protecting Disclosing Party’s Confidential Information that it uses for its own confidential information of a similar nature, but in no event less than reasonable care.  Promptly after becoming aware of any unauthorized use or disclosure of, and/or unauthorized attempts to access or modify, any of Disclosing Party’s Confidential Information in the custody or control of Receiving Party or its Authorized Recipients, Receiving Party shall notify Disclosing Party in writing and cooperate with Disclosing Party to investigate and mitigate any adverse effects therefrom.  Receiving Party shall be responsible for any unauthorized use or disclosure of Confidential Information by any of its Authorized Recipients.</p>
+<p>    4. De-identified or Anonymous Data. Tesla may, in its sole discretion, share certain de-identified or anonymous data, which is data that cannot be used to identify an individual (“Anonymous Data”).  Company will not, and will not attempt to, (a) re-identify any de-identified or anonymous data or (b) identify the individual with whom such data is associated.</p>
+<p>    5. No Publicity. Each party agrees that it shall not make any public disclosures relating to the existence of this Agreement or the Purpose without the prior written consent of the other party. </p>
+<p>    6. Exceptions. The obligations of Section 3 of this Agreement shall not apply to information (other than Anonymous Data) that: (a) is already known to Receiving Party or its Affiliates at the time of disclosure without obligation of confidentiality to Disclosing Party, (b) is or becomes publicly known through no wrongful act or omission of Receiving Party or its Affiliates, (c) is rightfully received by Receiving Party or its Affiliates from a third party without obligation of confidentiality, (d) is approved for release by written authorization of Disclosing Party, or (e) was developed by Receiving Party or its Affiliates independently and without the use or benefit of any of the Confidential Information.  A disclosure of Confidential Information that is required to be made by Receiving Party pursuant to any request, order or requirement of a court, administrative agency or any other governmental agency shall not be deemed a breach of this Agreement, provided that Receiving Party has: (x) immediately notified Disclosing Party in writing of such, request, order or requirement, (y) given Disclosing Party an opportunity to contest disclosure or seek an appropriate protective order, and (z) cooperated with Disclosing Party to narrow the scope of such disclosure to only that portion of the Confidential Information that is necessary to fulfill the request, order or requirement.</p>
+<p>    7. Ownership. All Confidential Information and derivations thereof shall remain the sole and exclusive property of Disclosing Party and no license or other right to such Confidential Information or either party’s intellectual property is granted or implied hereby.</p>
+<p>    8. As-Is Disclosures. Disclosing Party warrants that it has the right to disclose the Confidential Information to Receiving Party.  Except for the foregoing, (a) no other warranties are made whether express, implied or statutory, (b) all Confidential Information is provided on an “AS IS” basis, and (c) no representation, warranty, assurance, or guarantee is made by Disclosing Party with respect to the accuracy, performance, completeness, or suitability of the Confidential Information or non-infringement of third-party rights based on use of the Confidential Information by Receiving Party.</p>
+<p>    9. Current and Future Development. Nothing in this Agreement will be construed as a representation or inference that Receiving Party will not develop, or have developed, products or services that, without violation of this Agreement, compete with the products or services of Disclosing Party.</p>
+<p>    10. Return of Confidential Information. Confidential Information, and all copies thereof, remain the property of Disclosing Party.  Upon termination of this Agreement or the written request of Disclosing Party, Receiving Party shall promptly return to Disclosing Party all documents, presentations, and other tangible items of Confidential Information furnished by Disclosing Party or, at the request of Disclosing Party, certify in writing that all such Confidential Information has been destroyed.  Receiving Party shall also use reasonable efforts to delete all electronic copies of Disclosing Party’s Confidential Information under the Receiving Party’s control.  </p>
+<p>    11. Affiliate. As used herein, “Affiliate” shall mean an entity which: (a) controls or is controlled by a party hereto or (b) is under common control with a party hereto: where “control” means that more than fifty percent (>50%) of the controlled entity’s shares or ownership interest representing the right to make decisions for such entity are owned or controlled, directly or indirectly, by the controlling entity.  </p>
+<p>    12. Notices. Any notice required or permitted by this Agreement shall be made in writing and be deemed delivered upon verification of delivery to the other party.</p>
+<p>    13. Termination of this Agreement. This Agreement shall be effective as of the Effective Date and shall expire on the third (3rd) anniversary of the Effective Date.  Either party may terminate this Agreement for any or no reason upon written notice to the other party, and termination shall be effective sixty (60) calendar days after receipt of such notice.  No expiration or termination shall affect either party’s rights or obligations with respect to Confidential Information disclosed prior to such expiration or termination, and such rights or obligations shall continue as long as Receiving Party has custody of or control over Disclosing Party’s Confidential Information.  Notwithstanding any expiration or termination of this Agreement, Sections 3–6 and 10–18, inclusive, of this Agreement shall survive for five (5) years following the date of any such expiration or termination.</p>
+<p>    14. Governing Law; Conflict Resolution; Venue. This Agreement is governed by the laws of California, without regard to its conflict of laws principles. In the event of a conflict or dispute between the parties under this Agreement, the parties agree to meet and confer to discuss in good faith a resolution to such conflict or dispute.  The exclusive venue for any judicial action arising out of or relating to this Agreement will be the state courts of Santa Clara County, California and the U.S. District Court for the Northern District of California and the parties hereby waive any challenge to venue and personal jurisdiction.</p>
+<p>    15. Injunctive Relief. The parties acknowledge and agree that any breach or threatened breach of this Agreement by Receiving Party could cause harm to Disclosing Party for which money damages may not provide an adequate remedy.  The parties agree that in the event of such a breach or threatened breach of this Agreement, in addition to any other available remedies, Disclosing Party may seek temporary and permanent injunctive relief restraining Receiving Party from disclosing or using, in whole or in part, any Confidential Information.</p>
+<p>    16. Entire Agreement; Severability. This Agreement constitutes the entire agreement between the parties hereto regarding the subject matter hereof and supersedes all prior agreements, representations and understandings, oral or written, between the parties regarding the subject matter hereof.  If any provision of this Agreement is held by a court of competent jurisdiction to be illegal or unenforceable, such provision shall be changed and interpreted so as to best accomplish the objectives of the original provision to the fullest extent allowed by law and the remaining provisions of this Agreement shall remain in full force and effect.</p>
+<p>    17. Waiver. A waiver of any right hereunder shall in no way waive any other rights. No waiver, alteration, modification or amendment of this Agreement shall be effective unless in writing and signed by both parties.</p>
+<p>    18. Counterparts. This Agreement may be signed in duplicate originals, or in separate counterparts, which are effective as if the parties signed a single original.  A facsimile of an original signature or electronically signed version transmitted to the other party is effective as if the original was sent to the other party.</p>
+<p>*	*	*</p>
+<p>IN WITNESS WHEREOF, the parties have caused this Agreement to be executed by their duly authorized representatives and to be effective as of the Effective Date.</p>

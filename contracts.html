@@ -1,0 +1,724 @@
+
+        <head>
+            <style>
+                table {
+                  border-collapse: collapse;
+                }
+                table td {
+                  font-size: 0.8em;
+                }
+                body {
+                    margin-left: 100px;
+                    margin-right: 20px;
+                    font-family: sans;
+                }
+                h1 {
+                    margin-left: -40px;
+                }
+                h2 {
+                    margin-left: -20px;
+                    margin-top: 80px;
+                    border-bottom: 1px solid gray;
+                }
+            </style>
+        </head>
+        
+<h1>Prompt across Contracts - mutual > parties</h1>
+<h1>Summary</h1>
+<table border="1" style="width: 800px;">
+
+<tr>
+  <th>Contracts</th>
+  <th>Status</th>
+  <th>Human evaluation</th>
+</tr>
+<tr>
+  <td><a href="#British Gas Mutual NDA">British Gas Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>doesn't identify if both parties can be in either role</td>
+</tr>
+<tr>
+  <td><a href="#Capital Group Mutual NDA">Capital Group Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>sounds relevant but need more</td>
+</tr>
+<tr>
+  <td><a href="#TBWA Mutual NDA">TBWA Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>irrelevant part</td>
+</tr>
+<tr>
+  <td><a href="#Schwab Mutual NDA">Schwab Mutual NDA</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td></td>
+</tr>
+<tr>
+  <td><a href="#Athenahealth Mutual NDA">Athenahealth Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>doesn't identify if both parties can be in either role</td>
+</tr>
+<tr>
+  <td><a href="#Salesforce Supplier Mutual Confidentiality Agreement">Salesforce Supplier Mutual Confidentiality Agreement</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>describes wishes, but not contractual terms</td>
+</tr>
+<tr>
+  <td><a href="#General Electric MNDA">General Electric MNDA</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td>sounds good but might need to check more</td>
+</tr>
+<tr>
+  <td><a href="#PepsiCo Mutual NDA">PepsiCo Mutual NDA</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td></td>
+</tr>
+<tr>
+  <td><a href="#nda-with-residual.txt">nda-with-residual.txt</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td>nice answer</td>
+</tr>
+<tr>
+  <td><a href="#nda-without-residual.txt">nda-without-residual.txt</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td>repeat of sample contract</td>
+</tr>
+<tr>
+  <td><a href="#JM Familiy Mutual NDA">JM Familiy Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>incomplete</td>
+</tr>
+<tr>
+  <td><a href="#Kroger Mutual NDA">Kroger Mutual NDA</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td></td>
+</tr>
+<tr>
+  <td><a href="#Tesla Mutual NDA">Tesla Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>irrelevant</td>
+</tr>
+<tr>
+  <td><a href="#Target Mutual NDA">Target Mutual NDA</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td></td>
+</tr>
+<tr>
+  <td><a href="#Smarsh Mutual NDA">Smarsh Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>describes wishes, but not contractual terms</td>
+</tr>
+<tr>
+  <td><a href="#AppDynamics Mutual NDA">AppDynamics Mutual NDA</a></td>
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+  <td>sample contract</td>
+</tr>
+<tr>
+  <td><a href="#HootSuite Mutual NDA">HootSuite Mutual NDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>describes wishes, but not contractual terms</td>
+</tr>
+<tr>
+  <td><a href="#CrowdStrike MNDA">CrowdStrike MNDA</a></td>
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+  <td>not terms</td>
+</tr>
+<tr>
+  <td><a href="#McDonalds USA one-way NDA">McDonalds USA one-way NDA</a></td>
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+  <td></td>
+</tr>
+</table>
+<h1>Prompts</h1>
+
+<table border="1" style="width: 100%;">
+
+<tr>
+
+<a name="British Gas Mutual NDA"></a>
+
+  <td>British Gas Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "Confidential Information to be disclosed by one Party (the Disclosing Party) to the other Party (the Recipient)."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqH5k19YomrY44a3vic72Qk4LwJz</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    doesn't identify if both parties can be in either role<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Capital Group Mutual NDA"></a>
+
+  <td>Capital Group Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes. "WHEREAS, such discussions between the parties may require that each party disclose some of its Confidential Information to the other;"<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqH9xrKMEMPclVciengkHIscDLET</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    sounds relevant but need more<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="TBWA Mutual NDA"></a>
+
+  <td>TBWA Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "During the course of providing services for the Agency and its clients, the Parties will have access to marketing, financial, and other information."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHCR8G4mTWwW5AKY3Dj8wBXe5Yr</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    irrelevant part<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Schwab Mutual NDA"></a>
+
+  <td>Schwab Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "Company and Schwab each desire to review and discuss certain proprietary and confidential information of the other party"<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHF6AWGMVRuGSzsAnQAjEWSo2It</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    <br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Athenahealth Mutual NDA"></a>
+
+  <td>Athenahealth Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes. "The terms “Disclosing Party” and “Receiving Party” refer respectively to the Party disclosing or receiving Confidential Information."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHI5G6BZXcG47uOSPIQ31qhzg3m</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    doesn't identify if both parties can be in either role<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Salesforce Supplier Mutual Confidentiality Agreement"></a>
+
+  <td>Salesforce Supplier Mutual Confidentiality Agreement</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes. "Subject to the terms of this Agreement, the parties wish to disclose to each other Confidential Information."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHLwWs7fDfvLFaXxgPDQGv1kI8J</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    describes wishes, but not contractual terms<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="General Electric MNDA"></a>
+
+  <td>General Electric MNDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "GE and Service Provider may disclose to each other certain Confidential Information (as defined below), which GE and Service Provider agree to treat"<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHOL5DObfSqd4olXnWwYXEPIZhD</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    sounds good but might need to check more<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="PepsiCo Mutual NDA"></a>
+
+  <td>PepsiCo Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "Each party hereby grants to the other party the limited right to use the other’s Confidential Information".<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHRg4ofQtimlCfeZMlxeypB6Tn4</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    <br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="nda-with-residual.txt"></a>
+
+  <td>nda-with-residual.txt</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes. "Each undersigned party (the “Receiving Party”) understands that the other party (the “Disclosing Party”) has disclosed or may disclose information relating to the Disclosing Party’s business"<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7i34IaCI2oyqhVEsRQJPQ3n7ONImS</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    nice answer<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="nda-without-residual.txt"></a>
+
+  <td>nda-without-residual.txt</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes. "Each undersigned party (the “Receiving Party”) understands that the other party (the “Disclosing Party”) has disclosed or may disclose information."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHUaMJnbpIuMlGTuPozYk4xxzPW</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    repeat of sample contract<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="JM Familiy Mutual NDA"></a>
+
+  <td>JM Familiy Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "the parties may disclose Confidential Information (as defined herein) to each other and to their respective Representatives (as defined herein)."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHaqZsRml1Iw9krc5Fu1qd41f8Q</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    incomplete<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Kroger Mutual NDA"></a>
+
+  <td>Kroger Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "This Agreement sets forth the terms and conditions that will apply to any Confidential Information (as below defined) disclosed by either party".<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHd35LN4FwsVs2cRUI6U5QNmyS5</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    <br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Tesla Mutual NDA"></a>
+
+  <td>Tesla Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes. "“Confidential Information” shall mean information disclosed by one party (“Disclosing Party”) to the other party (“Receiving Party”)."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHhBq8cwMmqZRHwXzsOUZqx2H74</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    irrelevant<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Target Mutual NDA"></a>
+
+  <td>Target Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes. "“Discloser” means either Target or Company... “Recipient” means either Target or Company, when it receives, handles, processes, accesses, transmits, or stores Confidential Information."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHkhybZmF6a3cDJpBCH3E0OvoV2</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    <br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="Smarsh Mutual NDA"></a>
+
+  <td>Smarsh Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "Smarsh and Company wish to explore a potential business relationship related to ________________________(“Purpose”) and each of Smarsh and Company desires to receive confidential information of the other party"<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHq1FrDAIoLG07PXd4HA6CTZUf9</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    describes wishes, but not contractual terms<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="AppDynamics Mutual NDA"></a>
+
+  <td>AppDynamics Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "Each undersigned party (the “Receiving Party”) understands that the other party (the “Disclosing Party”) has disclosed or may disclose information".<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHupR9XnhuRifKNJrKZlEqcd0TI</pre></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">PASS</div></td>
+
+  <td><div style="background-color: lightGreen; font-color; white;">VALID</div></td>
+
+  <td>
+
+    sample contract<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="HootSuite Mutual NDA"></a>
+
+  <td>HootSuite Mutual NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "WHEREAS the Parties wish to mutually exchange and communicate non-public and confidential information concerning the Parties or their affiliates in connection".<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqHxP770pDSgYTvKgmEt5VIds6m3</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    describes wishes, but not contractual terms<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="CrowdStrike MNDA"></a>
+
+  <td>CrowdStrike MNDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>Yes, "each Party has disclosed, and may further disclose certain confidential technical and business information ... to the other Party."<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqI08GvxcOKgAvaQsf4evrQvxp3S</pre></td>
+
+  <td>pass</td>
+
+  <td><div style="background-color: #FED8B1; font-color; white;">INVALID</div></td>
+
+  <td>
+
+    not terms<br/>
+
+  </td>
+
+</tr>
+
+<tr>
+
+<a name="McDonalds USA one-way NDA"></a>
+
+  <td>McDonalds USA one-way NDA</td>
+
+  <td>parties</td>
+
+  <td>The text below is a contract.
+Two different parties will sign the contract.
+Determine if only one party is a receiving party or if both parties are a receiving party. 
+If only one one party is a receiving party, respond with 'no'.
+If both both parties are receiving parities, response with 'yes' followed by an extract of up to 20 words from the contract
+that was most relevant to the answer.</td>
+
+  <td>gpt-4</td>
+
+  <td>No<br/><br/><pre style="font-size: 0.7em;">chatcmpl-7zqI3lKW5H0E0O4lYW09mAA0Okeh4</pre></td>
+
+  <td><div style="background-color: red; font-color; white;">FAIL</div></td>
+
+  <td><div style="background-color: gray; font-color; white;">TBD</div></td>
+
+  <td>
+
+    <br/>
+
+  </td>
+
+</tr>
+
+</table>
